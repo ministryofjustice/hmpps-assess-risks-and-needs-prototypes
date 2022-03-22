@@ -6,39 +6,27 @@
 {% endblock %}
 
 {% block content %}
-
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
+    <h1 class="govuk-heading-xl govuk-!-padding-left-3 margin-top-30">MoJ Assess risks and needs prototypes</h1>
+    <div>
+      {{ govukInsetText({
+        text: "The individuals named and described in these prototypes, and their details, are fictitious. Any resemblance to a real person, either living or dead is coincidental and unintended."
+      }) }}</div>
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
-
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
-
-      <h2 class="govuk-heading-m">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Example pages and documentation</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul>
+    <hr>
+      <h2 class="govuk-heading-m">RSR</h2>
+      <p><a href="rsr/index.html">RSR Prototype v4</a></p>
+      <p><a href="https://www.figma.com/file/3wNziuEQXx2rD66rpe6bhc/Risk-of-Serious-Recidivism-RSR-(Predictor-Service)?node-id=1689%3A20865" target="_blank">RSR Prototype v3</a><br>Untested design because we progressed to looking at cloning data from a previous RSR and a change of flow</p>
+      <p><a href="https://www.figma.com/proto/3wNziuEQXx2rD66rpe6bhc/Risk-of-Serious-Recidivism-RSR-(Predictor-Service)?page-id=1658%3A12640&node-id=1658%3A20350&viewport=241%2C48%2C0.03&scaling=scale-down-width&starting-point-node-id=1658%3A20350&show-proto-sidebar=1" target="_blank">RSR Prototype v2</a></p>
+      <p><a href="https://www.figma.com/proto/3wNziuEQXx2rD66rpe6bhc/Risk-of-Serious-Recidivism-RSR-(Predictor-Service)?page-id=1424%3A5479&node-id=1424%3A5480&viewport=241%2C48%2C0.25&scaling=scale-down-width&starting-point-node-id=1424%3A5480&show-proto-sidebar=1" target="_blank">RSR Prototype v1</a></p>
+    <hr>
+    <h2 class="govuk-heading-m">Interventions</h2>
+      <p><a href="interventions/accommodation.html">Interventions - Prototype July 2021</a></p>
+    <hr>
+      <h2 class="govuk-heading-m">Community Payback</h2>
+      <p><a href="upw/index">Community payback assessment (f) - Prototype V2 (Sept 2021)</a></p>
+      <p><a href="upw_m/index">Community payback assessment (m)- Prototype V2 (Sept 2021)</a></p>
     </div>
-  </div>
+
 
 {% endblock %}

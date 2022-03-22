@@ -1,0 +1,306 @@
+
+{% extends "rsr/layout.html" %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-l">Risk of Serious Recidivism (RSR) calculator</span>
+      Offences and convictions
+    </h1>
+
+<!-- Current offences -->
+    <h2 class="govuk-heading-m">Current offences</h2>
+    <p>Has the individual  been convicted of any of these offences?</p>
+<!-- Button - no to all current convictions -->
+        {{ govukButton({
+          text: "Answer ‘No’ to all current offences",
+          href: "#",
+          isStartButton: false
+        }) }}
+
+<!-- Possession of a firearm with intent to endanger life or resist arrest -->
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "possession-of-firearm",
+      name: "possession-of-firearm",
+      fieldset: {
+        legend: {
+          text: "Possession of a firearm with intent to endanger life or resist arrest",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "possession-of-firearm-yes",
+          text: "Yes"
+        },
+        {
+          value: "possession-of-firearm-no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+<!-- Any other offence involving possession and/or use of weapons -->
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "possession-of-weapon",
+      name: "possession-of-weapon",
+      fieldset: {
+        legend: {
+          text: "Any other offence involving possession and/or use of weapons",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "possession-of-weapon-yes",
+          text: "Yes"
+        },
+        {
+          value: "possession-of-weapon-no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<!-- Previous offences -->
+    <h2 class="govuk-heading-m">Previous offences</h2>
+     <p>Has the individual previously been convicted of any of these offences?</p>
+<!-- Button - no to all current convictions -->
+      {{ govukButton({
+        text: "Answer ‘No’ to all current offences",
+        href: "#",
+        isStartButton: false
+      }) }}
+
+<!-- Murder/attempted murder/threat or conspiracy to murder/manslaughter -->
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "possession-of-firearm",
+        name: "possession-of-firearm",
+        fieldset: {
+          legend: {
+            text: "Murder/attempted murder/threat or conspiracy to murder/manslaughter",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "murder-yes",
+            text: "Yes"
+          },
+          {
+            value: "murder-no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+<!-- Wounding/GBH (Sections 18/20 Offences Against the Person Act 1861) -->
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "wounding-gbh",
+        name: "wounding-gbh",
+        fieldset: {
+          legend: {
+            text: "Wounding/GBH (Sections 18/20 Offences Against the Person Act 1861)",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "wounding-gbh-yes",
+            text: "Yes"
+          },
+          {
+            value: "wounding-gbh-no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+<!-- Aggravated burglary -->
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "aggravated-burglary",
+        name: "aggravated-burglary",
+        fieldset: {
+          legend: {
+            text: "Wounding/GBH (Sections 18/20 Offences Against the Person Act 1861)",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "aggravated-burglary-yes",
+            text: "Yes"
+          },
+          {
+            value: "aggravated-burglary-no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+<!-- Arson -->
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "arson",
+        name: "arson",
+        fieldset: {
+          legend: {
+            text: "Arson",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "arson-yes",
+            text: "Yes"
+          },
+          {
+            value: "arson-no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+<!-- Criminal damage with intent to endanger life -->
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "criminal-damage-endanger-life",
+        name: "criminal-damage-endanger-life",
+        fieldset: {
+          legend: {
+            text: "Criminal damage with intent to endanger life",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "criminal-damage-endanger-life-yes",
+            text: "Yes"
+          },
+          {
+            value: "criminal-damage-endanger-life-no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+<!-- Kidnapping/false imprisonment -->
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "kidnapping",
+        name: "kidnapping",
+        fieldset: {
+          legend: {
+            text: "Kidnapping/false imprisonment",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "kidnapping-yes",
+            text: "Yes"
+          },
+          {
+            value: "kidnapping-no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+<!-- Robbery -->
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "robbery",
+        name: "robbery",
+        fieldset: {
+          legend: {
+            text: "Robbery",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "robbery-yes",
+            text: "Yes"
+          },
+          {
+            value: "robbery-no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+<!-- Possession of a firearm with intent to endanger life or resist arrest -->
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "firearm-endanger-life",
+        name: "firearm-endanger-life",
+        fieldset: {
+          legend: {
+            text: "Possession of a firearm with intent to endanger life or resist arrest",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "firearm-endanger-life-yes",
+            text: "Yes"
+          },
+          {
+            value: "firearm-endanger-life-no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+
+<!-- Any other offence involving possession and/or use of weapons -->
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "other-offence-weapons",
+        name: "other-offence-weapons",
+        fieldset: {
+          legend: {
+            text: "Any other offence involving possession and/or use of weapons",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "other-offence-weapons-yes",
+            text: "Yes"
+          },
+          {
+            value: "other-offence-weapons-no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+<!-- Button -->
+    {{ govukButton({
+      text: "Continue",
+      href: "#",
+      isStartButton: false
+    }) }}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+
+{% extends "rsr/layout.html" %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-l">Risk of Serious Recidivism (RSR) calculator</span>
+      Previous RSR information for Gary exists
+    </h1>
+    <p>Information from previous interview answers exist for Gary. This information can be used to calculate an extended score for this person.</p>
+    {{ govukButton({
+      text: "Continue",
+      href: "offencesconvictions.html",
+      isStartButton: false
+    }) }}
+  </div>
+</div>
+{% endblock %}
