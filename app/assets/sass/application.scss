@@ -1,5 +1,6 @@
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
+$govuk-new-link-styles: true;
 
 // We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
 $govuk-assets-path: '/govuk/assets/';
@@ -14,7 +15,84 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list";
 @import "patterns/related-items";
 
-// Components that aren't in Frontend
-@import "components/cookie-banner";
-
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+@import "node_modules/@ministryofjustice/frontend/moj/all";
+
+
+//Service user banner
+#SUBanner{
+  margin: 10px 0px 0px 0px;
+  padding: 10px 0px 0px 0px;
+  border-bottom: 1px solid #B1B4B6;
+}
+
+//Offence details block
+#offenceDetails{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  margin-bottom: 40px;
+  position: static;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  background: #E0EEF8;
+}
+
+#offenceDetails .contents{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  position: static;
+  height: 34px;
+  left: 0px;
+  top: 0px;
+}
+#offenceDetails .contents p  {
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0px 0px;
+}
+
+#offenceDetails .contents p:first-child{
+  position: static;
+  width: 174px;
+  left: 0px;
+  top: 0px;
+}
+
+#ageAtFirstSanction{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #F3F2F1;
+  padding:10px 10px 0px 10px;
+}
+
+#rsrScore h2{
+margin: 0 0 5px 0;
+}
+
+#sexualPredictors{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 0;
+}
+
+#sexualPredictors h2{
+margin: 0 0 5px 0;
+}
+
+#sexualPredictors div.ospScores img{
+width: 100%;
+height: auto;
+}
+
+#sexualPredictors div:first-child{
+  margin-right: 24px;
+}

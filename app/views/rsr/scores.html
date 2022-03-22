@@ -1,0 +1,100 @@
+
+{% extends "rsr/layout.html" %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-l">Risk of Serious Recidivism (RSR) calculator</span>
+      Gary's scores
+    </h1>
+    <div id="rsrScore">
+      <h2 class="govuk-heading-l">RSR score</h2>
+      <img src="/public/images/rsrScore.png" alt="rsr score" width="100%">
+    </div>
+    <br>
+    {{ govukDetails({
+      summaryText: "About RSR Scores",
+      html: "<p><strong>What it shows</strong></p>
+      <p>The probability of proven reoffending by an individual within 1 and 2 years. Three types of offence are covered: </p>
+      <ul>
+        <li>Serious Nonsexual Violence (SNSV)</li>
+        <li>Contact Sexual (CS)</li>
+        <li>Indecent Images of Children (IIOC) </li>
+      </ul>
+      <p>Each type has its own actuarial predictor, and the RSR is the sum of all three predictor scores. The CS and IIOC elements are only scored for individuals with a known history of sexual offending. For men, the CS and IIOC elements are provided by the OASys Sexual Reoffending Predictor scores (OSP/C and OSP/I, respectively).</p>
+
+       <p><strong>Definitions</strong></p>
+      <p>In this case, ‘an individual’ means someone with the subject’s characteristics and circumstances.</p>
+
+       <p><strong>How to use it</strong></p>
+      <p>RSR scores should be used to underpin structured professional judgements of Risk of Serious Harm (RoSH). The scores can also be used to support decisions to allocate individuals within the National Probation Service.</p>
+
+      <p><strong>Things to note</strong></p>
+      <p>Proven serious reoffending is rare. Fewer than 2% of the caseload commit a proven serious reoffence within 2 years of a release from prison or the start of a community order.</p>
+      <p>There are two versions of RSR, depending how SNSV is scored: “brief static”, which uses similar risk factors to OGRS, and “extended static / dynamic” which incorporates dynamic risk factor and additional serious offending history data.</p>
+
+      <p><strong>How it is calculated</strong></p>
+      <p>RSR is calculated from answers to static questions. Depending on the static data, there is the possibility of answering additional dynamic questions during the assessment. </p>
+      "
+    }) }}
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    <div id="sexualPredictors">
+      <div class="ospScores">
+        <h2 class="govuk-heading-l">OSP/C score</h2>
+        <img src="/public/images/ospcScore.png" alt="rsr score">
+      </div>
+      <div class="ospScores">
+        <h2 class="govuk-heading-l">OSP/I score</h2>
+        <img src="/public/images/ospiScore.png" alt="rsr score">
+      </div>
+    </div>
+    <br>
+    {{ govukDetails({
+      summaryText: "About OSP/C scores",
+      html: "
+      <p><strong>What it shows</strong></p>
+      <p>OSP/C is one of two scores that make up OSP. The other score is OSP/I.</p>
+      <p>OSP/C predicts proven reoffending for a sexual or sexually motivated offence involving actual or attempted physical contact with a victim. </p>
+
+      <p><strong>Definitions</strong></p>
+      <p>A contact offence is defined by intended, attempted or actual contact with a live human being. Offences such as inciting a child to engage in sexual activity and grooming can be considered a ‘contact’ offence, even if no physical contact has happened; for example, the contact has taken place over the internet.</p>
+
+      <p><strong>How to use it</strong></p>
+      <p>OSP/C gives an outcome of ‘Low’, ‘Medium’, ‘High’ or ‘Very High’. Scores on an underlying 64-point scale are reported in these four groups.</p>
+
+      <p><strong>Things to note</strong></p>
+      <p>OSP is only calculated for men with a known history of sexual offending, including sexually motivated offending. While OSP does not predict the likelihood of someone committing an “other noncontact” sexual reoffence such as voyeurism or indecent exposure, OSP must still be calculated for men with such offending histories, to estimate their contact sexual and indecent images reoffending risks.</p>
+
+      <p><strong>How it is calculated</strong></p>
+      <p>OSP/C takes into account information about the individual such as age, number of sexual or sexually motivated offences, previous offending and if they have committed a contact or attempted contact offence against a stranger victim. </p>
+      "
+    }) }}
+    {{ govukDetails({
+      summaryText: "About OSP/I scores",
+      html: "
+      <p><strong>What it shows</strong></p>
+      <p>OSP/I is one of two scores that make up OSP. The other score is OSP/C.</p>
+
+      <p><strong>Definitions</strong></p>
+      <p>OSP/I predicts proven reoffending involving possessing or downloading indecent images of children.</p>
+
+      <p><strong>How to use it</strong></p>
+      <p>OSP/I is a 3 point scale, giving an outcome of ‘Low’, ‘Medium’ or ‘High’.</p>
+
+      <p><strong>Things to note</strong></p>
+      <p>OSP is only calculated for men with a known history of sexual offending, including sexually motivated offending. While OSP does not predict the likelihood of someone committing an “other noncontact” sexual reoffence such as voyeurism or indecent exposure, OSP must still be calculated for men with such offending histories, to estimate their contact sexual and indecent images reoffending risks.</p>
+
+      <p><strong>How it is calculated</strong></p>
+      <p>The OSP/I scale takes into account the overall number of current and previous convictions for IIOC offences.</p>"
+    }) }}
+
+
+<!-- Button -->
+    {{ govukButton({
+      text: "Save scores to Delius",
+      href: "#",
+      isStartButton: false
+    }) }}
+  </div>
+</div>
+{% endblock %}

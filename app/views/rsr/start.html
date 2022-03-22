@@ -1,0 +1,30 @@
+
+{% extends "rsr/layout.html" %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Risk of Serious Recidivism (RSR) calculator</h1>
+    <h2 class="govuk-heading-m">Calculate the RSR score for Gary Hart</h2>
+    <p>Your answers and the RSR score will appear in the Case allocation area of Delius.</p>
+    <div id="offenceDetails">
+      <div class="contents">
+          <p class="govuk-heading-s">Offence</p>
+          <p>00806 - ABH</p>
+      </div>
+      <div class="contents">
+          <p class="govuk-heading-s">Subcode</p>
+          <p>06 - Actual Bodily Harm (ABH)</p>
+      </div>
+      <div class="contents">
+          <p class="govuk-heading-s">Sentence date</p>
+          <p>12th  April 2021</p>
+      </div>
+    </div>
+    {{ govukButton({
+      text: "Start now",
+      href: "interview.html",
+      isStartButton: true
+    }) }}
+  </div>
+</div>
+{% endblock %}

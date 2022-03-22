@@ -1,0 +1,161 @@
+
+{% extends "rsr/layout.html" %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-l">Risk of Serious Recidivism (RSR) calculator</span>
+      Offences and convictions
+    </h1>
+<!-- date of first sanction -->
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    {{ govukDateInput({
+      id: "date-of-first-sanction",
+      namePrefix: "date-of-first-sanction",
+      fieldset: {
+        legend: {
+          text: "Date of first sanction",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: "For example, 27 3 2007"
+      }
+    }) }}
+<!-- date of first sanction help text -->
+    {{ govukDetails({
+      summaryText: "Help with: Date of first sanction",
+      text: "Needs content..."
+    }) }}
+
+<!-- Age at first sanction AUTO COMPLETE -->
+    <div id="ageAtFirstSanction">
+      <h3 class="govuk-heading-s">Age at first sanction</h3>
+      <p>XX years</p>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+<!-- Total number of sanctions for all offences -->
+    {{ govukInput({
+      label: {
+        text: "Total number of sanctions for all offences",
+        classes: "govuk-label--s",
+        isPageHeading: false
+      },
+      classes: "govuk-input--width-5",
+      id: "total-sanctions-all-offences",
+      name: "total-sanctions-all-offences"
+    }) }}
+<!-- date of first sanction help text -->
+    {{ govukDetails({
+      summaryText: "Help with: Total number of sanctions for all offences",
+      text: "Count the total number of convictions, conditional or absolute discharges, cautions, reprimands or final warnings. Include current offences."
+    }) }}
+
+
+<!-- How many of the total number of sanctions involved violent offences? -->
+    {{ govukInput({
+      label: {
+        text: "How many of the total number of sanctions involved violent offences?",
+        classes: "govuk-label--s",
+        isPageHeading: false
+      },
+      classes: "govuk-input--width-5",
+      id: "total-sanctions-involving-violence",
+      name: "total-sanctions-involving-violence"
+    }) }}
+<!-- date of first sanction help text -->
+    {{ govukDetails({
+      summaryText: "Help with: How many of the total number of sanctions involved violent offences?",
+      html: "<p>Count all violent convictions, conditional or absolute discharges, cautions, reprimands or final warnings. Include current offences.</p>
+      <p>Appendix C within the RSR guidance contains a poster that practitioners use in order to determine whether offences are scored as ‘violent’. For example, drunkenness is a violent offence in this context.</p>
+      <p>If a sanction includes both violent and nonviolent offences, it should be counted as violent, even if the primary offence is nonviolent.</p>
+      <p>Count each court appearance for a violent offence as only one sanction, regardless of how many violent offences were involved.</p>
+      <p>Please note: not all the offences in the guidance are, on first glance, violent in themselves. However, we have evidence from OASys Assessment data that the offences are either:</p>
+      <ul>
+        <li>an offence that necessarily involves violence or violent intent tend to involve violence when they are actually used to charge someone – for instance people are rarely charged with being drunk in public unless there is an aggravating or public nuisance element to their behaviour.</li>
+      </ul>"
+    }) }}
+
+
+<!-- Date of current conviction -->
+    {{ govukDateInput({
+      id: "date-of-current-conviction",
+      namePrefix: "date-of-current-conviction",
+      fieldset: {
+        legend: {
+          text: "Date of current conviction",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: "For example, 27 3 2007"
+      }
+    }) }}
+<!-- Date of current conviction  help text -->
+    {{ govukDetails({
+      summaryText: "Help with: Date of current conviction",
+      text: "If the individual pleads guilty, then the date of conviction is the date that they enter the guilty plea in court. If the date of conviction is not known, the date of the current sentence should be entered."
+    }) }}
+
+<!-- Start date of community sentence or earliest possible release from custody -->
+    {{ govukDateInput({
+      id: "sentence-start-date",
+      namePrefix: "sentence-start-date",
+      fieldset: {
+        legend: {
+          text: "Start date of community sentence or earliest possible release from custody",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: "For example, 27 3 2007"
+      }
+    }) }}
+<!-- Date of current conviction  help text -->
+    {{ govukDetails({
+      summaryText: "Help with: Start date of community sentence or earliest possible release from custody",
+      html: "<p>This is the earliest date that the individual could be released into the community.</p>
+      <p>While offence-free in the community, they can start to earn offence-free time on their RSR score. This can be impacted by their age increasing. </p>
+      <p>At Court stage we do not expect you to guess the date, so it is best to enter the date of sentence if a release date is not known. There is an option for staff to update this post-sentence once an actual release date is calculated. </p>
+      <p>If the individual is in prison enter the earliest possible release date; this may be HDC eligibility / parole eligibility date / conditional release date / automatic release date, etc. Use whichever date is earliest. </p>
+      <p>If the individual is in custody because they have been recalled, use the current date if they could be released again at any time, otherwise use the earliest plausible date for re-release. For lifers/IPP’s use the parole hearing date / oral hearing date / tariff expiry date. If no date is available at all, use the date the assessment is being completed and review the assessment to include the exact date when it is confirmed. For community sentences, this will be the sentence date.</p> "
+    }) }}
+
+
+<!-- Have they ever committed a sexual or sexually motivated offence? -->
+    {{ govukRadios({
+      idPrefix: "sexual-offences",
+      name: "sexual-offences",
+      fieldset: {
+        legend: {
+          text: "Have they ever committed a sexual or sexually motivated offence?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "sexual-offences-yes",
+          text: "Yes"
+        },
+        {
+          value: "sexual-offences-no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+<!-- Button -->
+    {{ govukButton({
+      text: "Continue",
+      href: "#",
+      isStartButton: false
+    }) }}
+  </div>
+</div>
+{% endblock %}

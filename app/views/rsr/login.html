@@ -1,0 +1,41 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+<h1 class="govuk-heading-l">Sign in</h1>
+
+{{ govukInput({
+  label: {
+    text: "Username"
+  },
+  classes: "govuk-!-width-one-third",
+  id: "username",
+  name: "username"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Password"
+  },
+  id: "password",
+  attributes: {"data-module": "moj-password-reveal"},
+  classes: "govuk-!-width-one-third",
+  name: "password",
+  type: "password",
+  value: "1234ABC!"
+}) }}
+
+{{ govukButton({
+  text: "Sign in",
+  href: "start.html"
+}) }}
+
+<h3 class="govuk-heading-m">Problems signing in</h3>
+<p><a href="#">I have forgotten my password</a></p>
+<p>{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "I have forgotten my password",
+  text: "..."
+}) }}</p>
+{% endblock %}
