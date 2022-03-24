@@ -21,7 +21,23 @@
       },
       hint: {
         text: "For example, 27 3 2007"
-      }
+      },
+      items: [
+        {
+          classes: "govuk-input--width-2",
+          name: "day",
+          value: "20"
+        },
+        {
+          classes: "govuk-input--width-2 ",
+          name: "month",
+          value: "01"
+        },
+        {
+          classes: "govuk-input--width-4",
+          name: "year",
+          value: "2012"
+        }]
     }) }}
 <!-- date of first sanction help text -->
     {{ govukDetails({
@@ -32,7 +48,7 @@
 <!-- Age at first sanction AUTO COMPLETE -->
     <div id="ageAtFirstSanction">
       <h3 class="govuk-heading-s">Age at first sanction</h3>
-      <p>XX years</p>
+      <p>24 years</p>
     </div>
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -45,6 +61,7 @@
         isPageHeading: false
       },
       classes: "govuk-input--width-5",
+      value: "18",
       id: "total-sanctions-all-offences",
       name: "total-sanctions-all-offences"
     }) }}
@@ -63,6 +80,7 @@
         isPageHeading: false
       },
       classes: "govuk-input--width-5",
+      value: "10",
       id: "total-sanctions-involving-violence",
       name: "total-sanctions-involving-violence"
     }) }}
@@ -93,7 +111,23 @@
       },
       hint: {
         text: "For example, 27 3 2007"
-      }
+      },
+      items: [
+        {
+          classes: "govuk-input--width-2",
+          name: "day",
+          value: "07"
+        },
+        {
+          classes: "govuk-input--width-2 ",
+          name: "month",
+          value: "07"
+        },
+        {
+          classes: "govuk-input--width-4",
+          name: "year",
+          value: "2021"
+        }]
     }) }}
 <!-- Date of current conviction  help text -->
     {{ govukDetails({
@@ -114,7 +148,23 @@
       },
       hint: {
         text: "For example, 27 3 2007"
-      }
+      },
+      items: [
+        {
+          classes: "govuk-input--width-2",
+          name: "day",
+          value: "07"
+        },
+        {
+          classes: "govuk-input--width-2 ",
+          name: "month",
+          value: "10"
+        },
+        {
+          classes: "govuk-input--width-4",
+          name: "year",
+          value: "2021"
+        }]
     }) }}
 <!-- Date of current conviction  help text -->
     {{ govukDetails({
@@ -145,7 +195,8 @@
         },
         {
           value: "sexual-offences-no",
-          text: "No"
+          text: "No",
+          checked: "true"
         }
       ]
     }) }}
@@ -153,7 +204,7 @@
 <!-- Button -->
     {{ govukButton({
       text: "Continue",
-      href: "sexualoffences.html",
+      href: "current-previous-offences.html",
       isStartButton: false
     }) }}
   </div>
