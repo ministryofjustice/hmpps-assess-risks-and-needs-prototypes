@@ -5,8 +5,8 @@
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-l">Risk of Serious Recidivism (RSR) calculator</span>
     {{ govukRadios({
-      idPrefix: "sign-in",
-      name: "sign-in",
+      idPrefix: "interview",
+      name: "interview",
       fieldset: {
         legend: {
           text: "Have you completed an interview with the individual?",
@@ -15,7 +15,7 @@
         }
       },
       hint: {
-        text: "You will get a more accurate RSR score if you have conducted an interview with the individual."
+        text: "You will calculate a more accurate RSR score if you have conducted an interview with the individual."
       },
       items: [
         {
@@ -30,7 +30,7 @@
     }) }}
     {{ govukButton({
       text: "Continue",
-      href: "offencesconvictions.html",
+      href: "interviewexists.html",
       isStartButton: false
     }) }}
   </div>
