@@ -50,7 +50,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     external-dns.alpha.kubernetes.io/set-identifier: prototype-ingress-${PROTOTYPE_NAME}-green
-    external-dns.alpha.kubernetes.io/aws-weight: "100"
+    external-dns.alpha.kubernetes.io/aws-weight: "0"
 spec:
   tls:
   - hosts:
@@ -63,3 +63,27 @@ spec:
         backend:
           serviceName: nginx-service
           servicePort: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: arns-prototype-ingress
+  annotations:
+    external-dns.alpha.kubernetes.io/set-identifier: arns-prototype-ingress-${PROTOTYPE_NAME}-green
+    external-dns.alpha.kubernetes.io/aws-weight: "100"
+spec:
+  ingressClassName: default
+  tls:
+  - hosts:
+    - ${PROTOTYPE_NAME}.apps.live.cloud-platform.service.justice.gov.uk
+  rules:
+  - host: ${PROTOTYPE_NAME}.apps.live.cloud-platform.service.justice.gov.uk
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: nginx-service
+            port:
+              number: 3000
